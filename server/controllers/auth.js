@@ -1,4 +1,5 @@
-import User from '../models/user'
+import User from "../models/user";
+import jwt from "jsonwebtoken";
 
 
 export const registration = async (req, res) => {
@@ -20,5 +21,36 @@ export const registration = async (req, res) => {
   } catch (err) {
     console.log('USER REGISTRATION FAILED', err)
     return res.status(400).send('Error. Try again')
+  }
+};
+
+export const login = async (req, res) => {
+  console.log(req.body);
+  const { email, password } = req.body;
+  try {
+    let user = await User.findOne({ email }).exec();
+    console.log("USER FOUND", user);
+    if(!user) res.status(400).send('User not found. Verify email prompted')
+    user.comparePassword(password, (err, match) => {
+      console.log('ERR ON PASSWORD COMPARE', err)
+      if(!match || err) return res.status(400).send("WRONG PASSWORD");
+      console.log("GENERATE A TOKEN THEN SEND RESPONSE TO CLIENT");
+      let token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
+        expiresIn: '7d'
+      });
+      res.json({
+        token,
+        user: {
+          _id: user._id,
+          name: user.name,
+          email: user.email,
+          createdAt: user.createdAt,
+          updatedAt: user.updatedAt,
+        },
+      });
+    });
+  } catch (err) {
+    console.log("LOGIN ERROR", err);
+    res.status(400).send("Login Failed. Verify password prompted.");
   }
 };

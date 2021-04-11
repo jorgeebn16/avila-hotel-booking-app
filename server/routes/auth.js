@@ -2,8 +2,9 @@ import express from "express";
 
 const router = express.Router();
 
-import{ registration } from "../controllers/auth";
+import{ registration, login } from "../controllers/auth";
 
 router.post('/registration', registration)
+router.post('/login', login)
 
 module.exports = router;
