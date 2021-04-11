@@ -1,10 +1,10 @@
 import User from "../models/user";
 import jwt from "jsonwebtoken";
 
-
 export const registration = async (req, res) => {
   console.log(req.body);
   const { name, email, password } = req.body
+
   if(!name) return res.status(400).send('Name is required');
   if(!password || password.length <6) 
     return res
@@ -29,12 +29,10 @@ export const login = async (req, res) => {
   const { email, password } = req.body;
   try {
     let user = await User.findOne({ email }).exec();
-    console.log("USER FOUND", user);
     if(!user) res.status(400).send('User not found. Verify email prompted')
     user.comparePassword(password, (err, match) => {
       console.log('ERR ON PASSWORD COMPARE', err)
       if(!match || err) return res.status(400).send("WRONG PASSWORD");
-      console.log("GENERATE A TOKEN THEN SEND RESPONSE TO CLIENT");
       let token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
         expiresIn: '7d'
       });

@@ -32,7 +32,7 @@ const Registration = ({ history }) => {
   return (
     <>
       <div className="container-fluid bg-white p-5 text-center">
-        <h1>Register</h1>
+        <h1>Registration</h1>
       </div>
 
       <div className="container">
