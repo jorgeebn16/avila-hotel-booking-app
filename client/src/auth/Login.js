@@ -27,7 +27,7 @@ const Login = ({history}) => {
               type: "LOGGED_IN_USER",
               payload: res.data,
             });
-            history.push("/");
+            history.push("/dashboard");
           }
     } catch (err) {
           console.log(err);
