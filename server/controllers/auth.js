@@ -26,11 +26,12 @@ export const registration = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-  console.log(req.body);
-  const { email, password } = req.body;
+
   try {
+    console.log(req.body);
+    const { email, password } = req.body;
     let user = await User.findOne({ email }).exec();
-    if(!user) res.status(400).send('User not found. Verify email prompted')
+    if(!user) return res.status(400).send('User not found. Verify email prompted')
     user.comparePassword(password, (err, match) => {
       console.log('ERR ON PASSWORD COMPARE', err)
       if(!match || err) return res.status(400).send("WRONG PASSWORD");

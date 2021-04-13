@@ -2,15 +2,12 @@ import Hotel from "../models/hotel";
 import fs from "fs";
 
 export const create = async (req, res) => {
-  //   console.log("req.fields", req.fields);
-  //   console.log("req.files", req.files);
   try {
     let fields = req.fields;
     let files = req.files;
 
     let hotel = new Hotel(fields);
     hotel.postedBy = req.user._id;
-    // handle image
     if (files.image) {
       hotel.image.data = fs.readFileSync(files.image.path);
       hotel.image.contentType = files.image.type;
@@ -67,6 +64,7 @@ export const remove = async (req, res) => {
 
 export const read = async (req, res) => {
   let hotel = await Hotel.findById(req.params.hotelId)
+    .populate("postedBy", "_id name")
     .select("-image.data")
     .exec();
   console.log("SINGLE HOTEL", hotel);

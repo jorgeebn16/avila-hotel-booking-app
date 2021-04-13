@@ -3,7 +3,7 @@ import { Card, Avatar, Badge } from "antd";
 import moment from "moment";
 import {getAccountBalance, currencyFormatter, payoutSetting} from "../actions/stripe";
 import { useEffect, useState } from "react";
-import {SearchOutlined} from "@ant-design/icons"
+import {SettingOutlined} from "@ant-design/icons"
 import {toast} from "react-toastify"
  
 const { Meta } = Card;
@@ -63,7 +63,7 @@ const ConnectNav = () => {
             </Ribbon>
             <Ribbon text="Payouts" color="silver">
               <Card onClick={handlePayoutSettings} className="bg-white pointer">
-                <SearchOutlined className="h5 pt-2"/>
+                <SettingOutlined className="h5 pt-2"/>
               </Card>
             </Ribbon>
           </>
