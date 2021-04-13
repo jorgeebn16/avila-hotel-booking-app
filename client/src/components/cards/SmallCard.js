@@ -32,7 +32,7 @@ const SmallCard = ({
           <div className="col-md-8">
             <div className="card-body">
               <h3 className="card-title">
-                {h.title}{" "}
+                {h.title}{""}
                 <span className="float-right text-primary">
                   {currencyFormatter({
                     amount: h.price,
@@ -41,7 +41,7 @@ const SmallCard = ({
                 </span>{" "}
               </h3>
               <p className="alert alert-info">{h.location}</p>
-              <p className="card-text">{`${h.content.substring(1, 200)}...`}</p>
+              <p className="card-text">{`${h.content.substring(0, 200)}...`}</p>
               <p className="card-text">
                 <span className="float-right text-primary">
                   for {diffDays(h.from, h.to)}{" "}

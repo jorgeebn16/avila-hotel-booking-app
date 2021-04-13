@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { HomeOutlined } from "@ant-design/icons";
 import { createConnectAccount } from "../actions/stripe";
 import { toast } from "react-toastify";
-import { sellerHotels} from"../actions/hotel";
+import { sellerHotels, deleteHotel } from"../actions/hotel";
 import SmallCard from "../components/cards/SmallCard";
 
 
@@ -16,10 +16,10 @@ const DashboardSeller = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() =>{
-    loadSellerHotels()
+    loadSellersHotels()
   }, [])
 
-  const loadSellerHotels = async () =>{
+  const loadSellersHotels = async () =>{
     let { data } = await sellerHotels(auth.token);
     setHotels(data);
   }
@@ -35,6 +35,14 @@ const DashboardSeller = () => {
       toast.error("Stripe connect failed, Try again.");
       setLoading(false);
     }
+  };
+
+  const handleHotelDelete = async (hotelId) => {
+    if (!window.confirm("Want to delete this Hotel?")) return;
+    deleteHotel(auth.token, hotelId).then((res) => {
+      toast.success("Hotel Deleted");
+      loadSellersHotels();
+    });
   };
 
   const connected = () => (
@@ -56,6 +64,7 @@ const DashboardSeller = () => {
         h={h} 
         showViewMoreButton={false} 
         owner={true}
+        handleHotelDelete={handleHotelDelete}
         />
         ))}
       </div>
