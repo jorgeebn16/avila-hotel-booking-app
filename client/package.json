@@ -1,7 +1,8 @@
 {
-  "name": "client",
+  "name": "mern-client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3000/",
   "dependencies": {
     "@ant-design/icons": "^4.3.0",
     "@stripe/stripe-js": "^1.11.0",
