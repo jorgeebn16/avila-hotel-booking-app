@@ -82,12 +82,6 @@ const HotelCreateForm = (props) => {
         <Option key={2}>{2}</Option>
         <Option key={3}>{3}</Option>
         <Option key={4}>{4}</Option>
-        <Option key={5}>{5}</Option>
-        <Option key={6}>{6}</Option>
-        <Option key={7}>{7}</Option>
-        <Option key={8}>{8}</Option>
-        <Option key={9}>{9}</Option>
-        <Option key={10}>{10}</Option>
       </Select>
     </div>
 
