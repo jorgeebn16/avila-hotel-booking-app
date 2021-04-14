@@ -134,8 +134,8 @@ export const stripeSuccess = async (req, res) => {
   try {
     const { hotelId } = req.body;
     const user = await User.findById(req.user._id).exec();
-
     if (!user.stripeSession) return;
+    
     const session = await stripe.checkout.sessions.retrieve(
       user.stripeSession.id
     );

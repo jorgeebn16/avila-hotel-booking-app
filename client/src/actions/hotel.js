@@ -46,4 +46,18 @@ export const createHotel = async (token, data) =>
     }
   );
 
+  export const userHotelBookings = async (token) =>
+  await axios.get(`${process.env.REACT_APP_API}/user-hotel-bookings`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+export const isAlreadyBooked = async (token, hotelId) =>
+  await axios.get(`${process.env.REACT_APP_API}/is-already-booked/${hotelId}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
   
