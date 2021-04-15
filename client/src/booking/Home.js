@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <>
       <div className="container-fluid bg-white p-5 text-center">
-        <h1>All Hotels</h1>
+        <h1>Hotels</h1>
       </div>
       <div className="col">
         <br />
