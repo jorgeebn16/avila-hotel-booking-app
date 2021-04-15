@@ -7,8 +7,5 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/avila-hotel',  
     useCreateIndex: true,
 
 })
-.then(() => console.log("DB Connected"))
-.catch((err) => console.log("DB Connection Error: ", err));
-
 
 module.exports = mongoose.connection;
