@@ -3,6 +3,7 @@ import { allHotels } from "../actions/hotel";
 import SmallCard from "../components/cards/SmallCard";
 import Search from "../components/forms/Search";
 
+
 const Home = () => {
   const [hotels, setHotels] = useState([]);
 
@@ -29,6 +30,7 @@ const Home = () => {
         {hotels.map((h) => (
           <SmallCard key={h._id} h={h} />
         ))}
+
       </div>
     </>
   );

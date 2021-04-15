@@ -12,6 +12,7 @@
     "algolia-places-react": "^1.6.1",
     "antd": "^4.9.4",
     "axios": "^0.21.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "moment": "^2.29.1",
     "query-string": "^4.3.4",
     "react": "^17.0.1",

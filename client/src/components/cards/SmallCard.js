@@ -23,7 +23,7 @@ const SmallCard = ({
               />
             ) : (
               <img
-                src="https://via.placeholder.com/900x500.png?text=MERN+Booking"
+                src="https://via.placeholder.com/900x500.png?text=Avila+Booking"
                 alt="default hotel image"
                 className="card-image img img-fluid"
               />
