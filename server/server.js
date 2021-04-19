@@ -1,11 +1,11 @@
-const express = require('express');
-const path = require('path');
-const { readdirSync } = require ('fs');
-const cors = require ('cors');
+const express = require("express");
+const path = require("path");
+const { readdirSync } = require ("fs");
+const cors = require ("cors");
 const morgan = require("morgan");
 require("dotenv").config();
 
-const db = require('./config/connection');
+const db = require("./config/connection");
 const app = express();
 
 const port = process.env.PORT || 8000;
