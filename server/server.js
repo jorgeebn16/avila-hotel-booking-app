@@ -9,7 +9,6 @@ const db = require("./config/connection");
 const app = express();
 
 const port = process.env.PORT || 8000;
-
 app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
