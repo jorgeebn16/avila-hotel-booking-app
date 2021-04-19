@@ -96,7 +96,7 @@ npm start
 View [Deployed Portfolio](https://jorgeebn16-avila-booking-app.herokuapp.com/)
 
 ## Contributing
-[![GitHub contributors](https://img.shields.io/github/contributors/jorgeebn16/20-React-Porfolio.svg)](https://GitHub.com/jorgeebn16/20-React-Porfolio/graphs/contributors/)
+[![GitHub contributors](https://img.shields.io/github/contributors/jorgeebn16/avila-hotel-booking-app.svg)](https://GitHub.com/jorgeebn16/avila-hotel-booking-app/graphs/contributors/)
 
 For anyone who wishes to contribute you can contact me with at jorgeebn16@gmail.com
 </br>
@@ -111,6 +111,6 @@ Email: jorgeebn16@gmail.com
 
 
 ## Issues
-[![GitHub issues](https://img.shields.io/github/issues/jorgeebn16/20-React-Porfolio.svg)](https://GitHub.com/jorgeebn16/20-React-Porfolio/issues/)
-[![GitHub issues-closed](https://img.shields.io/github/issues-closed/jorgeebn16/20-React-Porfolio.svg)](https://GitHub.com/jorgeebn16/20-React-Porfolio/issues?q=is%3Aissue+is%3Aclosed)
+[![GitHub issues](https://img.shields.io/github/issues/jorgeebn16/avila-hotel-booking-app.svg)](https://GitHub.com/jorgeebn16/avila-hotel-booking-app/issues/)
+[![GitHub issues-closed](https://img.shields.io/github/issues-closed/jorgeebn16/avila-hotel-booking-app.svg)](https://GitHub.com/jorgeebn16/avila-hotel-booking-app/issues?q=is%3Aissue+is%3Aclosed)
 
